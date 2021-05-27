@@ -29,7 +29,7 @@ const InputTodo = () => {
     const onSubmitForm = async e => {
         e.preventDefault();
         try {
-            if (description === '' || selectedcategory === 'none' || visibility === null) {
+            if (description === '' || selectedcategory === 'none' || visibility === 'none') {
                 toast.error('Please fill-in all fields!');
             } else {
                 const body = { description, selectedcategory, visibility };
@@ -75,7 +75,7 @@ const InputTodo = () => {
                     ))}
                 </select>
                 <select className="form-select ms-3" required onChange={e => setVisibility(e.target.value)}>
-                    <option value={null}>Choose Visibility</option>
+                    <option value="none">Choose Visibility</option>
                     <option value="public">public</option>
                     <option value="private">private</option>
                 </select>
