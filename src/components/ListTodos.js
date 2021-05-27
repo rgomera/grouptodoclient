@@ -13,7 +13,7 @@ const ListTodos = () => {
     //function to delete a todo
     const deleteTodo = async id => {
         try {
-            const response = await fetch(`http://localhost:5000/todos/delete_todo/${id}/${user_id}`, { method: 'DELETE' });
+            const response = await fetch(`https://grouptesttodoappserver.herokuapp.com/todos/delete_todo/${id}/${user_id}`, { method: 'DELETE' });
 
             // get the actual data of response
             const data = await response.json();
@@ -41,7 +41,7 @@ const ListTodos = () => {
     const getAllTodo = async () => {
         try {
             if (user_id) {
-                const response = await fetch(`http://localhost:5000/todo_list/${user_id}`);
+                const response = await fetch(`https://grouptesttodoappserver.herokuapp.com/todo_list/${user_id}`);
                 const JSONdata = await response.json();
                 setTodo(JSONdata);
             }
