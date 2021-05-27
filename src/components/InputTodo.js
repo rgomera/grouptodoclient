@@ -12,7 +12,7 @@ const InputTodo = () => {
     // function to fetch all categories
     const getAllCategory = async () => {
         try {
-            const response = await fetch('http://localhost:5000/categories');
+            const response = await fetch('https://grouptesttodoappserver.herokuapp.com/categories');
             const JSONdata = await response.json();
 
             setCategory(JSONdata);
@@ -33,7 +33,7 @@ const InputTodo = () => {
                 toast.error('Please fill-in all fields!');
             } else {
                 const body = { description, selectedcategory, visibility };
-                const response = await fetch(`http://localhost:5000/todos/create_todo/${user_id}`, {
+                const response = await fetch(`https://grouptesttodoappserver.herokuapp.com/todos/create_todo/${user_id}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(body),
