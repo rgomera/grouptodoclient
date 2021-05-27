@@ -21,7 +21,7 @@ const Login = () => {
         e.preventDefault();
         try {
             const body = { email, password };
-            const response = await fetch(`${process.env.PORT}/auth/login`, {
+            const response = await fetch('https://grouptesttodoappserver.herokuapp.com/auth/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
