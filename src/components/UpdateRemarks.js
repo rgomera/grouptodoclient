@@ -11,7 +11,7 @@ const UpdateRemarks = ({ todo }) => {
             else remarks = 'In Progress';
 
             const body = { remarks };
-            const response = await fetch(`http://localhost:5000/todos/update_remarks/${id}/${user_id}`, {
+            const response = await fetch(`https://grouptesttodoappserver.herokuapp.com/todos/update_remarks/${id}/${user_id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
